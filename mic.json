@@ -1,5 +1,5 @@
 {
-  "min_supported_build": 120,
+  "min_supported_build": 1,
   "latest_recommended_build": 135,
   "store_id": "0000000000",
   "notes": "初始化"
