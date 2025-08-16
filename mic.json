@@ -1,0 +1,5 @@
+{
+  "min_supported_build": "v1.0.0",
+  "latest_recommended_build": "v1.0.0",
+  "notes": "修正錄音崩潰與延遲問題"
+}
