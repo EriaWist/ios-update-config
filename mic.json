@@ -1,5 +1,6 @@
 {
   "min_supported_build": "v1.0.0",
   "latest_recommended_build": "v1.0.0",
-  "notes": "修正錄音崩潰與延遲問題"
+  "store_id": "0000000000",
+  "notes": "初始化"
 }
