@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>下載 YourApp – 支援 macOS 與 Windows</title>
+  <meta name="description" content="YourApp 官方下載頁：自動偵測作業系統，提供 macOS 與 Windows 最新版本下載與安裝說明。" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #0f1621;
+      --card-2: #121a26;
+      --text: #e6edf3;
+      --muted: #9fb1c1;
+      --brand: #4cc9f0;
+      --brand-2: #4895ef;
+      --ok: #2dd4bf;
+      --warn: #fde047;
+      --danger: #f43f5e;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Arial, "蘋果儷中黑", "PingFang TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% 0%, #162033 10%, #0b0f14 60%),
+                  radial-gradient(1200px 600px at 80% 100%, #111827 10%, #0b0f14 60%);
+    }
+    .container {
+      max-width: 1100px; padding: 48px 20px; margin: 0 auto; }
+
+    header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+    }
+    .logo {
+      width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--brand-2), var(--brand));
+      box-shadow: 0 10px 30px rgba(72,149,239,0.35);
+    }
+    .title { font-size: 28px; font-weight: 700; letter-spacing: 0.2px; }
+    .subtitle { color: var(--muted); margin-top: 2px; }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(76,201,240,0.06), rgba(72,149,239,0.02));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+    }
+    .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .grow { flex: 1 1 320px; }
+
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 10px; border-radius: 999px;
+      background: rgba(72,149,239,0.12); color: #cfe6ff; border: 1px solid rgba(72,149,239,0.35);
+      font-size: 12px; letter-spacing: 0.2px; margin-bottom: 8px;
+    }
+
+    .primary-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 18px; border-radius: 12px; border: none; cursor: pointer;
+      background: linear-gradient(135deg, var(--brand-2), var(--brand));
+      color: #06111a; font-weight: 700; font-size: 16px; letter-spacing: 0.3px;
+      box-shadow: 0 12px 30px rgba(72,149,239,0.45);
+      transition: transform .06s ease-in-out, box-shadow .2s ease;
+    }
+    .primary-btn:hover { transform: translateY(-1px); }
+    .primary-btn:active { transform: translateY(0); box-shadow: 0 8px 20px rgba(72,149,239,0.45); }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .hash { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; word-break: break-all; }
+
+    .alt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .card {
+      border-radius: 14px; background: var(--card); padding: 16px; border: 1px solid rgba(255,255,255,0.06);
+    }
+    .card h4 { margin: 0 0 6px; font-size: 16px; }
+    .card .desc { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+    .card .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .ghost-btn {
+      display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.12);
+      background: #0b121b; color: var(--text); padding: 10px 12px; border-radius: 10px; cursor: pointer; text-decoration: none;
+    }
+
+    details {
+      background: var(--card-2); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px;
+    }
+    details + details { margin-top: 12px; }
+    details summary { cursor: pointer; font-weight: 600; }
+    details p, details ol, details ul { color: var(--muted); }
+
+    footer { color: var(--muted); margin-top: 28px; font-size: 12px; text-align: center; }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 11.5C3 6.81 6.81 3 11.5 3s8.5 3.81 8.5 8.5-3.81 8.5-8.5 8.5S3 16.19 3 11.5Z" stroke="#06111a" stroke-opacity=".15" stroke-width="2"/>
+          <path d="M7 12c0-2.485 2.015-4.5 4.5-4.5S16 9.515 16 12s-2.015 4.5-4.5 4.5S7 14.485 7 12Z" fill="#06111a" fill-opacity=".25"/>
+        </svg>
+      </div>
+      <div>
+        <div class="title" id="appTitle">YourApp</div>
+        <div class="subtitle" id="subtitle">跨平台桌面應用 – 官方下載頁</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="pill" id="releaseMeta">最新版本 v1.0.0 ・ 2025-01-01</div>
+      <div class="row" style="margin-top:10px;">
+        <div class="grow">
+          <h2 style="margin:0 0 6px;">建議下載：<span id="recommendText">自動偵測中…</span></h2>
+          <p class="muted" id="detectHint">依據您的裝置自動選擇最合適的檔案。若偵測不準，請於下方選擇其他版本。</p>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <a id="primaryBtn" class="primary-btn" href="#" download>
+              <span id="primaryIcon" aria-hidden="true"></span>
+              <span id="primaryLabel">下載</span>
+            </a>
+            <span class="muted hash" id="primaryHash"></span>
+            <button id="copyHashBtn" class="ghost-btn" type="button">複製 SHA-256</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h3 style="margin:18px 0 10px;">其他可下載版本</h3>
+    <div id="altGrid" class="alt-grid"></div>
+
+    <h3 style="margin:24px 0 10px;">安裝與疑難排解</h3>
+    <details open>
+      <summary>macOS 安裝</summary>
+      <ol>
+        <li>下載 .dmg 檔後，打開並將 YourApp 拖移到「應用程式」資料夾。</li>
+        <li>首次開啟若出現「無法驗證開發者」，請在 Finder 對 App 右鍵選擇「打開」。</li>
+        <li>若仍被阻擋，可在「系統設定 → 隱私權與安全性」允許開啟，或在終端機執行：<br>
+          <span class="hash">xattr -d com.apple.quarantine /Applications/YourApp.app</span></li>
+      </ol>
+    </details>
+    <details>
+      <summary>Windows 安裝</summary>
+      <ol>
+        <li>下載 .exe 或 .msi，雙擊執行並依精靈完成安裝。</li>
+        <li>若看到 SmartScreen 警示，請點「其他資訊」→「仍要執行」。</li>
+        <li>如遇權限問題，請以系統管理員身分執行。</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>校驗檔案完整性（SHA-256）</summary>
+      <ul>
+        <li>macOS：在「終端機」輸入 <span class="hash">shasum -a 256 YourApp.dmg</span></li>
+        <li>Windows：在 PowerShell 輸入 <span class="hash">Get-FileHash .\YourApp.exe -Algorithm SHA256</span></li>
+      </ul>
+    </details>
+
+    <footer>
+      © <span id="year"></span> Your Company. 所有商標分別為其權利人所有。
+    </footer>
+  </div>
+
+  <script>
+    // ===== 下載設定（請依你的檔名與位置修改） =====
+    const CONFIG = {
+      appName: "YourApp",
+      version: "1.3.0",
+      releaseDate: "2025-08-10",
+      // 檔案清單：依實際提供情況填寫；若不存在的項目會自動隱藏
+      files: {
+        mac: {
+          // 建議保留 universal，如同一支 .dmg 內含 x64 與 arm64
+          universal: { url: "https://example.com/YourApp-1.3.0-mac-universal.dmg", sha256: "<填入SHA256>" },
+          apple:     { url: "https://example.com/YourApp-1.3.0-mac-arm64.dmg",    sha256: "<填入SHA256>" },
+          intel:     { url: "https://example.com/YourApp-1.3.0-mac-x64.dmg",      sha256: "<填入SHA256>" }
+        },
+        win: {
+          x64:   { url: "https://example.com/YourApp-1.3.0-win-x64.exe",  sha256: "<填入SHA256>" },
+          arm64: { url: "https://example.com/YourApp-1.3.0-win-arm64.exe",sha256: "<填入SHA256>" }
+        }
+      }
+    };
+
+    // ===== 小工具：OS / 架構偵測 =====
+    function detectOSArch() {
+      const ua = navigator.userAgent || "";
+      const platform = navigator.platform || "";
+      const uaData = navigator.userAgentData || {};
+
+      let os = "unknown";
+      if (/Windows/i.test(ua) || /Win/i.test(platform)) os = "win";
+      if (/Macintosh|Mac OS X|Mac OS/i.test(ua) || /Mac/i.test(platform)) os = "mac";
+
+      let arch = "x64";
+      if (uaData.architecture) {
+        const map = { "arm": "arm64", "arm64": "arm64", "x86": "x64", "x86_64": "x64" };
+        arch = map[uaData.architecture] || uaData.architecture;
+      } else if (/ARM64|AArch64|arm64/i.test(ua)) {
+        arch = "arm64";
+      } else {
+        arch = "x64";
+      }
+      return { os, arch };
+    }
+
+    // ===== 產生 OS 圖示 =====
+    function osIcon(os, size = 18) {
+      if (os === "mac") {
+        return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16.365 1.43c.1 1.1-.32 2.18-1.02 3.04-.69.85-1.77 1.5-2.86 1.41-.11-1.06.34-2.16 1.01-2.95.77-.92 2.08-1.59 2.87-1.5zM20.34 17.2c-.55 1.27-1.22 2.54-2.21 3.62-.9 1-2.1 2.18-3.52 2.17-1.33-.01-1.76-.69-3.29-.69-1.54 0-2.02.68-3.34.7-1.42.03-2.51-1.09-3.41-2.09-1.86-2.05-3.3-5.79-1.37-8.33.95-1.25 2.46-2.04 4.05-2.07 1.44-.03 2.8.73 3.3.73.5 0 2.27-.9 3.83-.77.65.03 2.5.27 3.68 2.03-.1.07-2.2 1.29-2.18 3.84.02 3.07 2.69 4.09 2.73 4.09z"/></svg>`;
+      }
+      // Windows
+      return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3 4.5l8-1.2v8.2H3V4.5zm8 8.9V21L3 19.7v-6.3h8zm2-10.3L21 2v9.5h-8V3.1zM21 12.9V22l-8-1.3v-7.8h8z"/></svg>`;
+    }
+
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    function setPrimary(os, variantKey, file) {
+      const osLabel = os === "mac" ? "macOS" : "Windows";
+      const variantMap = {
+        universal: "Universal",
+        apple: "Apple Silicon (arm64)",
+        intel: "Intel (x64)",
+        x64: "x64",
+        arm64: "ARM64"
+      };
+      const variantLabel = variantMap[variantKey] || "";
+
+      $("#recommendText").textContent = `${osLabel}${variantLabel ? " · " + variantLabel : ""}`;
+      $("#primaryLabel").textContent = `下載 ${osLabel}${variantLabel ? "（" + variantLabel + "）" : ""}`;
+      $("#primaryBtn").href = file.url;
+      $("#primaryBtn").setAttribute("data-os", os);
+      $("#primaryBtn").setAttribute("data-variant", variantKey);
+      $("#primaryIcon").innerHTML = osIcon(os, 18);
+      $("#primaryHash").textContent = file.sha256 || "";
+    }
+
+    function chooseRecommended(files, detected) {
+      if (detected.os === "mac") {
+        if (files.mac.universal) return ["mac", "universal", files.mac.universal];
+        if (detected.arch === "arm64" && files.mac.apple) return ["mac", "apple", files.mac.apple];
+        if (files.mac.intel) return ["mac", "intel", files.mac.intel];
+      }
+      if (detected.os === "win") {
+        if (detected.arch === "arm64" && files.win.arm64) return ["win", "arm64", files.win.arm64];
+        if (files.win.x64) return ["win", "x64", files.win.x64];
+      }
+      // Fallback: 優先 mac universal → mac intel → win x64
+      if (files.mac && files.mac.universal) return ["mac", "universal", files.mac.universal];
+      if (files.mac && files.mac.intel) return ["mac", "intel", files.mac.intel];
+      if (files.win && files.win.x64) return ["win", "x64", files.win.x64];
+      return null;
+    }
+
+    function renderAltGrid(files) {
+      const container = $("#altGrid");
+      container.innerHTML = "";
+
+      const groups = [
+        { os: "mac", title: "macOS 版本", items: [
+          ["universal", files.mac && files.mac.universal],
+          ["apple",     files.mac && files.mac.apple],
+          ["intel",     files.mac && files.mac.intel]
+        ]},
+        { os: "win", title: "Windows 版本", items: [
+          ["x64",   files.win && files.win.x64],
+          ["arm64", files.win && files.win.arm64]
+        ]}
+      ];
+
+      const variantMap = {
+        universal: "Universal",
+        apple: "Apple Silicon (arm64)",
+        intel: "Intel (x64)",
+        x64: "x64",
+        arm64: "ARM64"
+      };
+
+      for (const g of groups) {
+        // 檢查此 OS 是否至少有一個檔案
+        if (!g.items.some(([k, v]) => !!v)) continue;
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <h4>${g.title}</h4>
+          <div class="desc">若自動偵測不準，請手動選擇合適版本。</div>
+          <div class="btn-row" data-os="${g.os}"></div>
+        `;
+        const row = card.querySelector(".btn-row");
+        for (const [key, file] of g.items) {
+          if (!file) continue;
+          const a = document.createElement("a");
+          a.className = "ghost-btn";
+          a.href = file.url;
+          a.setAttribute("data-os", g.os);
+          a.setAttribute("data-variant", key);
+          a.innerHTML = `${osIcon(g.os, 16)} <span>${variantMap[key]}</span>`;
+          a.addEventListener("click", () => {
+            // 同步更新主按鈕與 Hash
+            setPrimary(g.os, key, file);
+          });
+          row.appendChild(a);
+        }
+        container.appendChild(card);
+      }
+    }
+
+    function init() {
+      $("#appTitle").textContent = CONFIG.appName;
+      document.title = `下載 ${CONFIG.appName} – 支援 macOS 與 Windows`;
+      $("#releaseMeta").textContent = `最新版本 v${CONFIG.version} ・ ${CONFIG.releaseDate}`;
+      $("#year").textContent = new Date().getFullYear();
+
+      const detected = detectOSArch();
+      const choice = chooseRecommended(CONFIG.files, detected);
+      if (choice) {
+        const [os, variantKey, file] = choice;
+        setPrimary(os, variantKey, file);
+      } else {
+        $("#recommendText").textContent = "未偵測到可用版本";
+        $("#primaryLabel").textContent = "暫無可下載檔案";
+        $("#primaryBtn").classList.add("hidden");
+        $("#primaryHash").textContent = "";
+      }
+
+      renderAltGrid(CONFIG.files);
+
+      $("#copyHashBtn").addEventListener("click", async () => {
+        const text = $("#primaryHash").textContent.trim();
+        if (!text) return;
+        try { await navigator.clipboard.writeText(text); } catch {}
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>
