@@ -2,7 +2,7 @@
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
-    <title>找出並倒序排序所有 line-N</title>
+    <title>LineMaxer：Markdown 擷取並排序 line-N 行號</title>
     <style>
       textarea {
         width: 100%;
@@ -12,6 +12,11 @@
       button {
         margin-top: 10px;
         margin-right: 10px;
+      }
+      input[type="text"] {
+        width: 100%;
+        margin-top: 10px;
+        font-family: monospace;
       }
       #result {
         margin-top: 10px;
@@ -28,6 +33,15 @@
       id="inputText"
       placeholder="例如：line-3、line-88、line-12..."
     ></textarea>
+
+    <h3>自訂正則表達式（預設為 <code>line-(\d+) or \[\]\((\d+)\) </code>）</h3>
+    <input
+      id="regexInput"
+      type="text"
+      placeholder="輸入正則，例如：line-(\\d+)"
+      value="line-(\d+)"
+    />
+
     <br />
     <button onclick="findAndSortLines()">找出並由大到小排序所有 N</button>
 
@@ -36,17 +50,39 @@
     <script>
       function findAndSortLines() {
         const text = document.getElementById("inputText").value;
-        const matches = [...text.matchAll(/line-(\d+)/g)];
-        const nums = matches.map((m) => parseInt(m[1], 10));
-        const uniqueSorted = [...new Set(nums)].sort((a, b) => b - a); // 改為由大到小排序
+        const regexText = document.getElementById("regexInput").value.trim();
+        let regex;
+
+        try {
+          regex = new RegExp(regexText, "g");
+        } catch (err) {
+          document.getElementById("result").textContent =
+            "❌ 正則表達式錯誤：" + err.message;
+          return;
+        }
+
+        const matches = [...text.matchAll(regex)];
+
+        // 嘗試取得捕獲群組中的數字
+        const nums = matches
+          .map((m) => {
+            for (let i = 1; i < m.length; i++) {
+              const val = parseInt(m[i], 10);
+              if (!isNaN(val)) return val;
+            }
+            return null;
+          })
+          .filter((n) => n !== null);
+
+        const uniqueSorted = [...new Set(nums)].sort((a, b) => b - a);
 
         const resultDiv = document.getElementById("result");
         if (uniqueSorted.length > 0) {
           resultDiv.textContent =
-            `共找到 ${uniqueSorted.length} 個 line-N：\n` +
+            `✅ 共找到 ${uniqueSorted.length} 個匹配結果：\n` +
             uniqueSorted.join(", ");
         } else {
-          resultDiv.textContent = "未找到任何 line-N";
+          resultDiv.textContent = "未找到任何符合的項目";
         }
       }
     </script>
