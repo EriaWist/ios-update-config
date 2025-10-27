@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Markdown 加/移除隱藏行號</title>
+    <style>
+      textarea,
+      pre {
+        width: 100%;
+        font-family: monospace;
+        box-sizing: border-box;
+      }
+      textarea {
+        height: 200px;
+      }
+      pre {
+        background: #f0f0f0;
+        padding: 10px;
+        white-space: pre-wrap;
+      }
+      button {
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MarkAnchor：Markdown 隱形行號標記工具</h1>
+    <h2>貼上 Markdown 內容</h2>
+    <textarea id="mdInput" placeholder="貼上你的 .md 內容..."></textarea>
+    <br />
+    <button onclick="addLineAnchors()">加上隱藏編號</button>
+    <button onclick="removeLineAnchors()">移除隱藏編號</button>
+    <button onclick="copyOutput()">複製結果</button>
+
+    <h2>處理後的內容</h2>
+    <pre id="output"></pre>
+
+    <script>
+      function addLineAnchors() {
+        const input = document.getElementById("mdInput").value;
+        const lines = input.split("\n");
+
+        const processed = lines.map((line, index) => {
+          const lineNumber = index + 1;
+          if (line.trim() === "") {
+            return ""; // 空行不加標籤但保留行數
+          } else {
+            return `<a id="line-${lineNumber}"></a>` + line;
+          }
+        });
+
+        const result = processed.join("\n");
+        document.getElementById("output").textContent = result;
+      }
+
+      function removeLineAnchors() {
+        const input = document.getElementById("mdInput").value;
+        const cleaned = input.replace(/<a id="line-\d+"><\/a>/g, "");
+        document.getElementById("output").textContent = cleaned;
+      }
+
+      function copyOutput() {
+        const output = document.getElementById("output").textContent;
+        navigator.clipboard
+          .writeText(output)
+          .then(() => alert("已複製結果！"))
+          .catch((err) => alert("複製失敗：" + err));
+      }
+    </script>
+  </body>
+</html>

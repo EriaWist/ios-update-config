@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>找出並倒序排序所有 line-N</title>
+    <style>
+      textarea {
+        width: 100%;
+        height: 200px;
+        font-family: monospace;
+      }
+      button {
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+      #result {
+        margin-top: 10px;
+        font-weight: bold;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LineMaxer：Markdown 擷取並排序 line-N 行號</h1>
+
+    <h2>輸入含有 line-N 的文字內容</h2>
+    <textarea
+      id="inputText"
+      placeholder="例如：line-3、line-88、line-12..."
+    ></textarea>
+    <br />
+    <button onclick="findAndSortLines()">找出並由大到小排序所有 N</button>
+
+    <div id="result"></div>
+
+    <script>
+      function findAndSortLines() {
+        const text = document.getElementById("inputText").value;
+        const matches = [...text.matchAll(/line-(\d+)/g)];
+        const nums = matches.map((m) => parseInt(m[1], 10));
+        const uniqueSorted = [...new Set(nums)].sort((a, b) => b - a); // 改為由大到小排序
+
+        const resultDiv = document.getElementById("result");
+        if (uniqueSorted.length > 0) {
+          resultDiv.textContent =
+            `共找到 ${uniqueSorted.length} 個 line-N：\n` +
+            uniqueSorted.join(", ");
+        } else {
+          resultDiv.textContent = "未找到任何 line-N";
+        }
+      }
+    </script>
+  </body>
+</html>
