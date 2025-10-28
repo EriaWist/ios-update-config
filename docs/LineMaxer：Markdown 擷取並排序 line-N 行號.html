@@ -38,6 +38,9 @@
     <div>
       <button onclick="setRegex('line-(\\d+)')">使用 line-(\\d+)</button>
       <button onclick="setRegex('\\[\\]\\((\\d+)\\)')">使用 [](\\d+)</button>
+      <button onclick="setRegex('(line-(\\d+))|\\[\\]\\((\\d+)\\)')">
+        同時匹配 line-(N) 和 [](N)
+      </button>
     </div>
 
     <input
