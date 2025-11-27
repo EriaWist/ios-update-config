@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BLE Studio 隱私權政策</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 16px;
+        background-color: #ffffff;
+        color: #222222;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.4rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 1.4rem;
+        margin-bottom: 0.3rem;
+      }
+      p {
+        margin: 0.4rem 0;
+      }
+      ul {
+        padding-left: 1.2rem;
+        margin: 0.3rem 0;
+      }
+      .muted {
+        color: #666666;
+        font-size: 0.9rem;
+      }
+      .section {
+        margin-bottom: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BLE Studio 隱私權政策</h1>
+    <p class="muted">最後更新日期：<strong>2025-11-27</strong></p>
+
+    <p>
+      本隱私權政策說明您在使用 <strong>BLE Studio</strong>（以下簡稱「本
+      App」）時， 我們如何處理與保護您的資料。請您在使用本 App
+      前，詳細閱讀本政策內容。
+    </p>
+
+    <div class="section">
+      <h2>一、適用範圍</h2>
+      <p>
+        本政策適用於您在 iOS 裝置上使用 BLE Studio 的期間。 若您透過本 App
+        連線、操作或測試第三方藍牙裝置，該裝置本身的隱私政策由其製造商或服務提供者負責，本
+        App 僅協助顯示相關資訊。
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>二、本 App 收集與處理的資料</h2>
+      <p>
+        本 App 主要用途為協助開發者與進階使用者測試與除錯 BLE（Bluetooth Low
+        Energy）連線，本身<strong>不會要求註冊帳號</strong>、<strong>不會收集姓名、電子郵件或聯絡方式</strong>。
+      </p>
+      <p>在您使用過程中，本 App 可能在您的裝置上處理以下資訊：</p>
+      <ul>
+        <li>
+          <strong>附近藍牙裝置資訊：</strong
+          >例如裝置名稱、UUID、RSSI（訊號強度）、支援的 Service/Characteristic
+          等。 這些資訊僅用於在 App 介面中顯示，並協助您進行測試與除錯。
+        </li>
+        <li>
+          <strong>您輸入或傳送的資料：</strong>包括您在本 App
+          中輸入的文字、預設指令（presets）、變數（variables）、以及透過 GATT
+          寫入／通知的內容。 這些資料僅儲存在您本機裝置或透過 iOS 機制（如 App
+          Group、偏好設定檔）保存。
+        </li>
+        <li>
+          <strong>除錯 Log：</strong>本 App
+          可能在畫面上顯示連線狀態、讀寫結果等日誌，以便您檢查 BLE 行為。
+          除非您主動複製或匯出，這些 Log 只會保留在您的裝置上。
+        </li>
+      </ul>
+      <p>
+        除非您主動透過電子郵件、截圖或其他方式回報問題，本 App
+        不會主動將上述資訊傳送給開發者或任何遠端伺服器。
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>三、資料儲存位置與保留期間</h2>
+      <ul>
+        <li>
+          所有設定（例如 Service UUID、Characteristic UUID、自動回覆規則 JSON
+          等）均儲存在您本機的應用程式空間或 App Group 中。
+        </li>
+        <li>
+          您可隨時在 App 內清除 Log
+          或修改／刪除預設規則，相關資料即會從本機刪除。
+        </li>
+        <li>本 App 不會在背景將您的資料上傳至雲端伺服器。</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>四、權限使用說明</h2>
+      <p>為提供完整功能，本 App 可能會請求下列系統權限：</p>
+      <ul>
+        <li>
+          <strong>藍牙權限：</strong>用於掃描周邊藍牙裝置、建立連線、讀寫 GATT
+          Service/Characteristic。 此權限僅用於實現 App
+          的核心功能，不會用於未經授權的追蹤。
+        </li>
+        <li>
+          <strong>網路權限（如有）：</strong
+          >若未來版本加入線上更新、錯誤回報或其他網路功能，本 App
+          可能會使用網路連線。
+          目前版本若無相關功能，則不會主動透過網路傳輸您的測試資料。
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>五、第三方服務與分析工具</h2>
+      <p>
+        目前版本的 BLE Studio 不整合第三方廣告 SDK，也不內建行為追蹤分析工具。
+        若未來加入例如 Crash
+        回報或分析服務，我們將於更新本隱私權政策時明確說明收集項目與用途。
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>六、兒童隱私</h2>
+      <p>
+        本 App 主要面向開發者與技術使用者，並非設計給 13 歲以下兒童使用。
+        若您為監護人並認為兒童在未獲您同意的情況下使用本
+        App，請與我們聯絡，我們會協助處理相關問題。
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>七、您的權利</h2>
+      <p>
+        由於本 App
+        不會建立伺服器端帳號，也不會將您的個人資料上傳到雲端，您可以直接在裝置上行使以下權利：
+      </p>
+      <ul>
+        <li>隨時刪除 App 內的 Log、預設指令與變數設定。</li>
+        <li>隨時從裝置上刪除本 App，以移除所有與本 App 相關的本機資料。</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>八、隱私權政策之變更</h2>
+      <p>
+        我們可能因功能調整、法規變更或其他必要因素更新本隱私權政策。
+        如本政策有重大變更，我們會於 App
+        更新說明中或適當位置提醒您查閱最新版本。
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>九、聯絡方式</h2>
+      <p>
+        若您對本隱私權政策或 BLE Studio
+        的資料處理方式有任何疑問、建議或要求，請透過以下方式與我們聯絡：
+      </p>
+      <p>
+        開發者：<strong> Eria </strong><br />
+        電子郵件：<a href="mailto:[c121680118@gmail.com]"
+          >c121680118@gmail.com</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
