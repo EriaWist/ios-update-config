@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EveryCalc 支援中心</title>
+    <meta
+      name="description"
+      content="EveryCalc App 支援中心：常見問題、回報問題與聯絡方式。"
+    />
+    <style>
+      :root {
+        --bg: #0b0c10;
+        --card: #12141a;
+        --text: #e9eef5;
+        --muted: #a9b3c1;
+        --line: rgba(255, 255, 255, 0.08);
+        --accent: #6aa9ff;
+        --accent2: #7ee2b8;
+        --warn: #ffcc66;
+        --danger: #ff6a6a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
+          "Noto Sans TC", "Microsoft JhengHei", Helvetica, Arial, sans-serif;
+        background:
+          radial-gradient(
+            1200px 600px at 20% -10%,
+            rgba(106, 169, 255, 0.15),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 90% 10%,
+            rgba(126, 226, 184, 0.12),
+            transparent 55%
+          ),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 18px 60px;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 18px;
+        border: 1px solid var(--line);
+        background: rgba(18, 20, 26, 0.75);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+      }
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        min-width: 260px;
+      }
+      .logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          rgba(106, 169, 255, 0.95),
+          rgba(126, 226, 184, 0.9)
+        );
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        position: relative;
+        flex: 0 0 auto;
+      }
+      .logo:after {
+        content: "";
+        position: absolute;
+        inset: 10px;
+        border-radius: 10px;
+        background: rgba(11, 12, 16, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .title h1 {
+        font-size: 18px;
+        margin: 0 0 2px;
+        letter-spacing: 0.2px;
+      }
+      .title p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        font-size: 14px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.07);
+        text-decoration: none;
+      }
+      .btn.primary {
+        border-color: rgba(106, 169, 255, 0.35);
+        background: rgba(106, 169, 255, 0.12);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+        margin-top: 16px;
+      }
+      @media (max-width: 860px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .actions {
+          justify-content: flex-start;
+        }
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: rgba(18, 20, 26, 0.65);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 16px;
+      }
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+      }
+      .card p,
+      .card li {
+        color: var(--muted);
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        font-size: 13px;
+        color: var(--muted);
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+      .pill strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+      details {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.03);
+        margin: 10px 0;
+      }
+      summary {
+        cursor: pointer;
+        color: var(--text);
+        font-weight: 600;
+        list-style: none;
+        outline: none;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      .hint {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 10px;
+        border-top: 1px dashed var(--line);
+        padding-top: 10px;
+      }
+      .list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+      }
+      .k {
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.85);
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--line);
+        padding: 2px 6px;
+        border-radius: 8px;
+        white-space: nowrap;
+      }
+      footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+        opacity: 0.95;
+      }
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .warn {
+        color: var(--warn);
+      }
+      .danger {
+        color: var(--danger);
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .hr {
+        height: 1px;
+        background: var(--line);
+        margin: 12px 0;
+      }
+      .note {
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(106, 169, 255, 0.25);
+        background: rgba(106, 169, 255, 0.08);
+        color: rgba(233, 238, 245, 0.92);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="title">
+            <h1>EveryCalc 支援中心</h1>
+            <p>在任何輸入框中計算與快速輸入的效率鍵盤</p>
+          </div>
+        </div>
+        <div class="actions">
+          <!-- TODO: 把 mailto 裡的信箱換成你的支援信箱 -->
+          <a
+            class="btn primary"
+            href="mailto:support@yourdomain.com?subject=EveryCalc%20%E6%94%AF%E6%8F%B4%E8%AB%AE%E8%A9%A2"
+          >
+            聯絡支援
+          </a>
+          <!-- TODO: 若你有隱私權政策頁面，更新此連結 -->
+          <a class="btn" href="#privacy">隱私權</a>
+          <a class="btn" href="#faq">常見問題</a>
+        </div>
+      </header>
+
+      <div class="grid">
+        <section class="card">
+          <h2>我們可以協助你什麼？</h2>
+          <div class="pill"><strong>鍵盤計算</strong>輸入不中斷</div>
+          <div class="pill"><strong>房租試算</strong>輸入度數即算</div>
+          <div class="pill"><strong>效率工具</strong>更快更準</div>
+
+          <p class="small">
+            如果你遇到計算結果、輸入行為、鍵盤顯示或設定問題，請直接寄信給我們。
+            為了更快定位問題，建議你在信件內附上以下資訊：
+          </p>
+
+          <ul class="list">
+            <li>iOS 版本（例如：iOS 17.3）</li>
+            <li>裝置型號（例如：iPhone 13）</li>
+            <li>EveryCalc 版本號（App 內關於頁面或 App Store 版本）</li>
+            <li>問題發生步驟（越具體越好）</li>
+            <li>若方便，附上截圖或螢幕錄影</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <div class="note">
+            小提醒：若你是在「鍵盤」中使用 EveryCalc，請確認已在
+            <span class="k">設定 → 一般 → 鍵盤 → 鍵盤</span> 中啟用 EveryCalc。
+          </div>
+
+          <p class="hint">
+            重要：若你無法在輸入框看到鍵盤，通常是尚未啟用鍵盤或未允許完整存取（如需）。
+            但 EveryCalc 會以最少必要權限運作，並以保護隱私為優先。
+          </p>
+        </section>
+
+        <aside class="card" id="faq">
+          <h2>常見問題</h2>
+
+          <details>
+            <summary>Q：如何啟用 EveryCalc 鍵盤？</summary>
+            <div class="small">
+              <ol class="list">
+                <li>打開 <span class="k">設定</span></li>
+                <li>進入 <span class="k">一般 → 鍵盤 → 鍵盤</span></li>
+                <li>
+                  點選 <span class="k">加入新鍵盤</span>，選擇
+                  <span class="k">EveryCalc</span>
+                </li>
+                <li>回到輸入框，長按地球鍵切換到 EveryCalc</li>
+              </ol>
+            </div>
+          </details>
+
+          <details>
+            <summary>Q：我想快速修改數字，為什麼會自動全選？</summary>
+            <div class="small">
+              這是為了加速輸入與更改數值的設計。點擊數字欄位後自動全選，方便你直接輸入新值取代舊值。
+            </div>
+          </details>
+
+          <details>
+            <summary>Q：房租試算怎麼用？</summary>
+            <div class="small">
+              在房租設定中輸入本月度數（或相關數值），EveryCalc
+              會即時計算並顯示結果。你也可以調整階梯級距或費率來符合你的租屋計費方式。
+            </div>
+          </details>
+
+          <details>
+            <summary>Q：之後會新增什麼功能？</summary>
+            <div class="small">
+              規劃中的功能包含：<span class="muted"
+                >匯率換算、簡易記帳、記事本</span
+              >
+              等。 你也可以來信告訴我們最想要的功能，我們會納入後續更新規劃。
+            </div>
+          </details>
+
+          <details>
+            <summary>Q：遇到異常或計算結果不一致怎麼辦？</summary>
+            <div class="small">
+              請寄信給支援信箱，並附上：使用情境、輸入數值、期待結果與實際結果、以及版本資訊。
+              這能大幅加快修復速度。
+            </div>
+          </details>
+        </aside>
+      </div>
+
+      <section class="card" id="privacy" style="margin-top: 16px">
+        <h2>隱私權與資料</h2>
+        <p class="small">
+          EveryCalc
+          以最小化資料收集為原則。一般情況下，計算與輸入行為皆在裝置端完成。
+        </p>
+        <ul class="list">
+          <li>我們不會要求你提供不必要的個人資料。</li>
+          <li>
+            若未來功能需要使用雲端服務，將在版本更新時清楚說明與提供選擇。
+          </li>
+        </ul>
+        <p class="small warn">
+          如果你在 App Store Connect 另有「隱私權政策
+          URL」，建議在此頁面也提供同一份內容或連結。
+        </p>
+      </section>
+
+      <footer>
+        <div>© <span id="y"></span> EveryCalc. All rights reserved.</div>
+        <div class="small">
+          支援信箱：<a href="mailto:support@yourdomain.com"
+            >support@yourdomain.com</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
