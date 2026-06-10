@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PocketGit Privacy Policy</title>
+    <meta name="description" content="PocketGit Privacy Policy" />
+
+    <style>
+      :root {
+        --bg: #050b12;
+        --card: rgba(255, 255, 255, 0.065);
+        --card-border: rgba(255, 255, 255, 0.13);
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.68);
+        --accent: #38d5ff;
+        --accent-2: #1a9cff;
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+          Arial, sans-serif;
+        background:
+          radial-gradient(
+            circle at 78% 8%,
+            rgba(56, 213, 255, 0.18),
+            transparent 32%
+          ),
+          radial-gradient(
+            circle at 18% 90%,
+            rgba(26, 156, 255, 0.14),
+            transparent 35%
+          ),
+          linear-gradient(135deg, #02060b 0%, #07131f 48%, #062b3b 100%);
+        color: var(--text);
+        min-height: 100vh;
+        line-height: 1.75;
+      }
+
+      .container {
+        width: min(920px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0 80px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 56px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        font-size: 22px;
+        letter-spacing: -0.03em;
+      }
+
+      .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        display: grid;
+        place-items: center;
+        box-shadow: 0 12px 30px rgba(56, 213, 255, 0.25);
+      }
+
+      .logo svg {
+        width: 22px;
+        height: 22px;
+        stroke: #021018;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 15px;
+        margin-left: 18px;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      .hero {
+        text-align: center;
+        margin-bottom: 36px;
+      }
+
+      .badge {
+        display: inline-flex;
+        padding: 8px 14px;
+        border: 1px solid var(--card-border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: clamp(40px, 7vw, 72px);
+        line-height: 1.08;
+        margin: 0 0 16px;
+        letter-spacing: -0.06em;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius);
+        padding: clamp(24px, 4vw, 42px);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
+      }
+
+      section {
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: 26px;
+        line-height: 1.25;
+        margin: 0 0 12px;
+        letter-spacing: -0.035em;
+      }
+
+      p {
+        color: var(--muted);
+        margin: 0 0 14px;
+        font-size: 16px;
+      }
+
+      ul {
+        color: var(--muted);
+        padding-left: 22px;
+        margin: 8px 0 16px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .highlight {
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .note {
+        margin-top: 24px;
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: rgba(56, 213, 255, 0.08);
+        border: 1px solid rgba(56, 213, 255, 0.22);
+      }
+
+      .note p {
+        margin: 0;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        margin-top: 36px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        font-size: 14px;
+      }
+
+      @media (max-width: 720px) {
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+          margin-bottom: 44px;
+        }
+
+        nav a {
+          margin-left: 0;
+          margin-right: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 7.5L12 3l8 4.5v9L12 21l-8-4.5v-9z"></path>
+              <path d="M12 12L4.5 7.8"></path>
+              <path d="M12 12l7.5-4.2"></path>
+              <path d="M12 12v8.5"></path>
+            </svg>
+          </div>
+          <span>Pocket <span style="color: var(--accent)">Git</span></span>
+        </div>
+
+        <nav>
+          <a href="index.html">Support</a>
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="badge">Privacy Policy</div>
+          <h1>PocketGit Privacy Policy</h1>
+          <p class="subtitle">Last updated: June 10, 2026</p>
+        </section>
+
+        <article id="privacy" class="card">
+          <section>
+            <h2>1. Overview</h2>
+            <p>
+              PocketGit is a Git repository management app designed for iPhone.
+              We value your privacy. This Privacy Policy explains how PocketGit
+              handles data and what you should know when using the app.
+            </p>
+            <p>
+              <span class="highlight">
+                PocketGit does not actively collect, track, sell, or share your
+                personal data.
+              </span>
+            </p>
+          </section>
+
+          <section>
+            <h2>2. Data We Collect</h2>
+            <p>
+              PocketGit does not send your personal data to our servers. The app
+              does not use advertising trackers or third-party analytics tools.
+            </p>
+            <p>
+              Data created or used inside the app, such as Git repositories,
+              commit information, branch information, remote settings, app
+              settings, and related files, is primarily stored locally on your
+              device.
+            </p>
+          </section>
+
+          <section>
+            <h2>3. Local Data Storage</h2>
+            <p>
+              To provide Git repository management features, PocketGit may store
+              the following data locally on your device:
+            </p>
+            <ul>
+              <li>Git repositories added or created by the user</li>
+              <li>
+                Repository files, commits, branches, remotes, and other
+                Git-related information
+              </li>
+              <li>App preferences and operation states</li>
+              <li>
+                Git remote connection information entered or configured by the
+                user
+              </li>
+              <li>
+                Credentials or access tokens saved by the user on the device
+              </li>
+            </ul>
+            <p>
+              This data is used to provide app functionality and is not actively
+              uploaded to our servers by PocketGit.
+            </p>
+          </section>
+
+          <section>
+            <h2>4. Third-Party Git Services</h2>
+            <p>
+              Users may choose to use PocketGit with GitHub or other third-party
+              Git services. When you configure a remote, sign in to a
+              third-party service, clone, fetch, pull, or push, related data may
+              be transmitted directly between your device and the selected
+              third-party service.
+            </p>
+            <p>
+              The handling of such data is governed by the privacy policies and
+              terms of service of those third-party services. PocketGit does not
+              control how third-party services process your data.
+            </p>
+          </section>
+
+          <section>
+            <h2>5. Credentials and Access Tokens</h2>
+            <p>
+              If you choose to use an access token, password, or other
+              credential for GitHub or another Git service, PocketGit may store
+              that credential locally on your device for future Git operations.
+            </p>
+            <p>
+              PocketGit does not actively send these credentials to our servers.
+              Credentials are only used when you perform Git operations that
+              require authentication with the third-party Git service you
+              selected.
+            </p>
+          </section>
+
+          <section>
+            <h2>6. Git Server Repo Mode</h2>
+            <p>
+              PocketGit may provide Git Server Repo Mode, which allows your
+              iPhone to provide repository access to other devices on the same
+              Wi-Fi network.
+            </p>
+            <p>
+              When this feature is enabled, your device may make a repository
+              accessible on your local network. Please enable this feature only
+              on trusted networks and turn it off when it is no longer needed.
+            </p>
+          </section>
+
+          <section>
+            <h2>7. Analytics, Advertising, and Tracking</h2>
+            <p>
+              PocketGit does not use advertising SDKs, does not track users
+              across apps or websites, and does not sell user data to third
+              parties.
+            </p>
+            <p>
+              If we add crash reporting, analytics, or other data collection
+              features in the future, we will update this Privacy Policy and
+              disclose the relevant data usage in accordance with App Store
+              requirements.
+            </p>
+          </section>
+
+          <section>
+            <h2>8. Data Sharing</h2>
+            <p>
+              PocketGit does not share, sell, or rent your personal data to
+              third parties.
+            </p>
+            <p>
+              Repository data is only transmitted to a Git service when you
+              intentionally configure a third-party remote and perform a Git
+              operation such as push, pull, fetch, or clone.
+            </p>
+          </section>
+
+          <section>
+            <h2>9. Data Deletion</h2>
+            <p>
+              You can delete repositories, settings, or credentials inside the
+              app. You may also delete the PocketGit app from iOS to remove
+              local data stored by the app on your device.
+            </p>
+            <p>
+              If data has already been pushed to GitHub or another third-party
+              service, deletion of that data must be handled through that
+              third-party service.
+            </p>
+          </section>
+
+          <section>
+            <h2>10. Children’s Privacy</h2>
+            <p>
+              PocketGit is not specifically directed to children. We do not
+              knowingly collect personal data from children.
+            </p>
+          </section>
+
+          <section>
+            <h2>11. Changes to This Privacy Policy</h2>
+            <p>
+              We may update this Privacy Policy from time to time. If
+              significant changes are made, we will update the “Last updated”
+              date on this page.
+            </p>
+          </section>
+
+          <section id="contact">
+            <h2>12. Contact Us</h2>
+            <p>
+              If you have any questions about this Privacy Policy or how
+              PocketGit handles data, please contact us:
+            </p>
+            <p>
+              Email:
+              <a
+                href="mailto:eriahuang121@gmail.com?subject=PocketGit%20Privacy%20Policy"
+              >
+                eriahuang121@gmail.com
+              </a>
+            </p>
+          </section>
+
+          <div class="note">
+            <p>
+              Before publishing, replace
+              <strong>eriahuang121@gmail.com</strong> with your actual support
+              email address.
+            </p>
+          </div>
+        </article>
+      </main>
+
+      <footer>
+        <div>© 2026 PocketGit. All rights reserved.</div>
+        <div>
+          <a href="mailto:eriahuang121@gmail.com"
+            >mailto:eriahuang121@gmail.com</a
+          >
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
