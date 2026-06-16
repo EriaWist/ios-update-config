@@ -1,6 +1,6 @@
 {
-  "min_supported_build": "1.0.2",
-  "latest_recommended_build": "1.0.2",
+  "min_supported_build": "1.0.1",
+  "latest_recommended_build": "1.0.1",
   "store_id": "6778365639",
-  "notes": "初始化"
+  "notes": "修復UI"
 }
