@@ -1,2 +1,3 @@
-https://eriawist.github.io/ios-update-config/
-https://raw.githubusercontent.com/EriaWist/ios-update-config/main/
+https://eriawist.github.io/
+
+https://raw.githubusercontent.com/EriaWist/eriawist.github.io/main/
