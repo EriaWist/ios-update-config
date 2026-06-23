@@ -1,6 +1,6 @@
 {
   "min_supported_build": "1.0.0",
-  "latest_recommended_build": "1.0.3",
+  "latest_recommended_build": "1.0.6",
   "store_id": "6778365639",
   "notes": "Added GitHub login support"
 }
